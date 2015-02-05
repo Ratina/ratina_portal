@@ -51,6 +51,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home',
+    'blog',
+    'lang',
+    'others',
+    'about',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -97,7 +102,9 @@ USE_TZ = True
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
 )
 
 STATIC_URL = '/static/'
+
+# DO node settings.
+STATIC_ROOT = '/home/django/static'
