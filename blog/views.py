@@ -27,7 +27,7 @@ class IndexView(ListView):
         post_list = Post.objects.all()
         paginator = Paginator(post_list, 5)
 
-        page = self.kwargs.get('page')
+        page = self.request.GET.get('page')
         try:
             posts = paginator.page(page)
         except PageNotAnInteger:

@@ -116,3 +116,5 @@ STATIC_URL = '/static/'
 
 # DO node settings.
 STATIC_ROOT = '/home/django/static'
+
+MARKDOWN_EXTENSIONS = ('extra', 'codehilite',)

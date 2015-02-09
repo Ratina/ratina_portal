@@ -17,7 +17,7 @@ from django_markdown.models import MarkdownField
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    subtitle = models.CharField(max_length=255)
+    subtitle = models.CharField(max_length=255, blank=True)
     author = models.ForeignKey('Author')
     content = MarkdownField()
     date = models.DateTimeField(auto_now_add=True)

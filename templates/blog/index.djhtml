@@ -1,6 +1,8 @@
 {% extends "base.djhtml" %}
 {% load staticfiles %}
 
+{% block title %}博文{% endblock %}
+
 {% block content %}
     <section id="blog" class="container">
         <div class="blog">

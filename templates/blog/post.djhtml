@@ -1,4 +1,5 @@
 {% extends "blog/index.djhtml" %}
+{% load staticfiles %}
 {% load django_markdown %}
 {% load ratina %}
 {% block blog_content %}
@@ -14,4 +15,8 @@
 <div class="content">
     {{ object.content | markdown }}
 </div>
+{% endblock %}
+
+{% block script %}
+    <link href="{% static "css/code.css" %}" rel="stylesheet">
 {% endblock %}

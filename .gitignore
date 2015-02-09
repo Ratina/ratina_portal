@@ -10,3 +10,6 @@
 # Code coverage
 htmlcov/
 .coverage
+
+# test db
+*.sqlite3
