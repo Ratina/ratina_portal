@@ -28,6 +28,11 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
 )
 
+TEMPLATE_LOADERS = (
+    'django_jinja.loaders.FileSystemLoader',
+    'django_jinja.loaders.AppLoader',
+)
+
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.debug",
@@ -36,7 +41,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
-    "utils.context_processors.app_name"
+    "utils.context_processors.app_name",
 )
 
 ALLOWED_HOSTS = []
@@ -51,6 +56,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_jinja',
+    'django_markdown',
+    'utils',
     'home',
     'blog',
     'lang',

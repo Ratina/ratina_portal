@@ -17,4 +17,4 @@ from django.views.generic import TemplateView
 
 
 class IndexView(TemplateView):
-    template_name = "lang/index.jinja"
+    template_name = "lang/index.djhtml"

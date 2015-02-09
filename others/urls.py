@@ -16,5 +16,5 @@ from .views import IndexView
 
 
 urlpatterns = patterns('',
-    url('^$', IndexView.as_view(), name='others.index'),
+    url('^$', IndexView.as_view(), name='index'),
 )

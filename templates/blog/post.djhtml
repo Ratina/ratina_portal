@@ -1,0 +1,17 @@
+{% extends "blog/index.djhtml" %}
+{% load django_markdown %}
+{% load ratina %}
+{% block blog_content %}
+<div class="center">
+    <h2>{{ object.title }}</h2>
+    {% if object.subtitle %}<p class="lead">{{ object.subtitle }}</p>{% endif %}
+<div class="pull-left">
+    <div class="subline">
+        <img style="width: 2.0em; vertical-align: middle;" src="{{ author.avatar }}" alt="{{ author.display_name }}"> {{ object.date | rt_date_cn }}
+    </div>
+</div>
+</div>
+<div class="content">
+    {{ object.content | markdown }}
+</div>
+{% endblock %}

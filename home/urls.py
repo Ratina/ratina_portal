@@ -3,5 +3,5 @@ from .views import IndexView
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', IndexView.as_view(), name='home.index'),
+    url(r'^$', IndexView.as_view(), name='index'),
 )

@@ -1,12 +1,35 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-urlpatterns = patterns('',
-    # Examples:
-    url(r'^$', include('home.urls', app_name='home')),
-    url(r'^blog/', include('blog.urls', app_name='blog')),
-    url(r'^lang/', include('lang.urls', app_name='lang')),
-    url(r'^others/', include('others.urls', app_name='others')),
-    url(r'^about/', include('about.urls', app_name='about')),
+urlpatterns = patterns(
+    '',
+    url(r'^$', include(
+        'home.urls',
+        app_name='home',
+        namespace='home',
+    )),
+    url(r'^blog/', include(
+        'blog.urls',
+        app_name='blog',
+        namespace='blog',
+    )),
+    url(r'^lang/', include(
+        'lang.urls',
+        app_name='lang',
+        namespace='lang'
+    )),
+    url(r'^others/', include(
+        'others.urls',
+        app_name='others',
+        namespace='others'
+    )),
+    url(r'^about/', include(
+        'about.urls',
+        app_name='about',
+        namespace='about'
+    )),
+    url('^markdown/', include(
+        'django_markdown.urls'
+    )),
     url(r'^admin/', include(admin.site.urls)),
 )
