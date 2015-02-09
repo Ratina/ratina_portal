@@ -44,12 +44,12 @@
 <div class="top-banner">
     <div class="top-banner-content-container container-fluid">
         <div class="top-banner-content">
-            Hi, we are still working on this new django-based version of the portal. This needs approximately a week.
+            框架迁移基本完成，剩余的博文还需花点时间。
         </div>
     </div>
     <div class="top-banner-handle-container">
         <div class="top-banner-handle center-block">
-            Click me
+            点击这里
         </div>
     </div>
 </div>
