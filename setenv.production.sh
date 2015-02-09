@@ -1,0 +1,1 @@
+export RATINA_PORTAL_DEBUG=0
