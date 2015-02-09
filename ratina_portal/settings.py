@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '0a4gyc(obbbiz2k&h2%cf^ev_4z3zngt3g-k^41lejgr&@5dqf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -44,7 +44,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "utils.context_processors.app_name",
 )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

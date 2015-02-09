@@ -1,12 +1,11 @@
 Django==1.7.4
 django-jinja==1.1.0
 django-markdown==0.8.4
--e git+https://github.com/Ratina/django-taggit.git#egg=django-taggit
-django-taggit==0.12.2
+-e git+https://github.com/Ratina/django-taggit.git@develop#egg=django-taggit
 jedi==0.8.1
 Jinja2==2.7.3
 Markdown==2.5.2
 MarkupSafe==0.23
 Pillow==2.7.0
 Pygments==2.0.2
-rope-py3k==0.9.4.post1
+rope-py3k==0.9.4
