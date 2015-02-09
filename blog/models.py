@@ -13,6 +13,7 @@ __author__ = "Savor d'Isavano"
 
 from django.db import models
 from django_markdown.models import MarkdownField
+from taggit.managers import TaggableManager
 
 
 class Post(models.Model):
@@ -22,6 +23,7 @@ class Post(models.Model):
     content = MarkdownField()
     date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
+    tags = TaggableManager()
 
     @property
     def excerpt(self):

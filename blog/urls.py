@@ -12,11 +12,12 @@ Blog urls.
 __author__ = "Savor d'Isavano"
 
 from django.conf.urls import patterns, include, url
-from .views import IndexView, PostView
+from .views import IndexView, PostView, TagView
 
 urlpatterns = patterns(
     '',
 #    url('^(p(?P<page>))?$', IndexView.as_view(), name='index')
     url('^$', IndexView.as_view(), name='index'),
     url('^(?P<pk>\d+)/$', PostView.as_view(), name='detail'),
+    url('^tag/(?P<tag>.+)/$', TagView.as_view(), name='tag'),
 )

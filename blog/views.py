@@ -16,6 +16,7 @@ from django.views.generic import ListView, DetailView
 from django.core.paginator import (
     Paginator, EmptyPage, PageNotAnInteger
 )
+from utils.paginator import make_page
 from .models import Post
 
 
@@ -24,16 +25,9 @@ class IndexView(ListView):
     model = Post
 
     def get_queryset(self):
-        post_list = Post.objects.all()
-        paginator = Paginator(post_list, 5)
-
+        post_list = Post.objects.order_by('-date').all()
         page = self.request.GET.get('page')
-        try:
-            posts = paginator.page(page)
-        except PageNotAnInteger:
-            posts = paginator.page(1)
-        except EmptyPage:
-            posts = paginator.page(paginator.num_pages)
+        posts = make_page(post_list, per_page=5, current_page=page)
 
         return posts
 
@@ -41,3 +35,16 @@ class IndexView(ListView):
 class PostView(DetailView):
     template_name = 'blog/post.djhtml'
     model = Post
+
+
+class TagView(ListView):
+    template_name = 'blog/list.djhtml'
+    model = Post
+
+    def get_queryset(self):
+        tag = self.kwargs.get('tag')
+        post_list = Post.objects.filter(tags__name=tag)
+        page = self.request.GET.get('page')
+        posts = make_page(post_list, per_page=5, current_page=page)
+
+        return posts

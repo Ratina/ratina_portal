@@ -58,6 +58,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_jinja',
     'django_markdown',
+    'taggit',
     'utils',
     'home',
     'blog',
@@ -116,5 +117,12 @@ STATIC_URL = '/static/'
 
 # DO node settings.
 STATIC_ROOT = '/home/django/static'
+
+MEDIA_URL = '/media/'
+
+if DEBUG:
+    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+else:
+    MEDIA_ROOT = '/home/django/media'
 
 MARKDOWN_EXTENSIONS = ('extra', 'codehilite',)

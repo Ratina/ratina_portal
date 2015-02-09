@@ -15,6 +15,7 @@ from django import template
 
 register = template.Library()
 
+
 def rt_date(value):
     return value.strftime('%-Y-%-m-%-d')
 
