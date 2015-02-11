@@ -22,7 +22,7 @@ SECRET_KEY = '0a4gyc(obbbiz2k&h2%cf^ev_4z3zngt3g-k^41lejgr&@5dqf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = bool(int(env.get('DEBUG')))
+DEBUG = bool(int(env.get('DEBUG', '0')))
 
 TEMPLATE_DEBUG = True
 
@@ -60,6 +60,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_jinja',
     'django_markdown',
+    'debug_toolbar',
     'taggit',
     'utils',
     'home',

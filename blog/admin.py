@@ -12,10 +12,18 @@ Blog admin.
 __author__ = "Savor d'Isavano"
 
 from django.contrib import admin
-from django_markdown.admin import MarkdownModelAdmin
-from .models import Author, Post
+from django_markdown.admin import MarkdownModelAdmin, MarkdownInlineAdmin
+from .models import Author, Post, PostFile
 
 # Register your models here.
 
+class PostFileInline(admin.StackedInline):
+    model = PostFile
+
+
+class PostAdmin(MarkdownModelAdmin):
+    inlines = [PostFileInline,]
+
+
 admin.site.register(Author)
-admin.site.register(Post, MarkdownModelAdmin)
+admin.site.register(Post, PostAdmin)
