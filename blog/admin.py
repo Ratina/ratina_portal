@@ -22,6 +22,7 @@ class PostFileInline(admin.StackedInline):
 
 
 class PostAdmin(MarkdownModelAdmin):
+    list_display = ['title', 'author']
     inlines = [PostFileInline,]
 
 
