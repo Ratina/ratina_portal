@@ -20,6 +20,7 @@ import itertools
 import re
 import uuid
 import os
+from .utils import ext_markdown
 
 
 class Post(models.Model):
@@ -33,8 +34,18 @@ class Post(models.Model):
     tags = TaggableManager(blank=True)
 
     @property
+    def content_ext(self):
+        return ext_markdown(self, self.content)
+
+    @property
     def excerpt(self):
-        return self.content
+        r = re.compile(r'(?P<excerpt>(.|\n){200}.*?)\r*\n', re.U | re.MULTILINE)
+        content = ext_markdown(self, self.content)
+
+        m = re.match(r, content)
+        if m:
+            return "{}...".format(m.group('excerpt'))
+        return content
 
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
@@ -42,29 +53,6 @@ class Post(models.Model):
             return reverse('blog:detail', args=[self.slug])
         else:
             return reverse('blog:detail', args[self.pk])
-
-    def save(self):
-        # Replace file links with actual file url.
-        content = self.content
-        file_tag = re.compile('#file:\s*\((?P<file>.*?)\)')
-        def replace_method(matchobj):
-            name = matchobj.group('file')
-            bf = self.files.filter(name=name)[:1]
-            bf = bf[0] if bf else None
-            if bf:
-                return bf.file.url
-            return '#url_error'
-        self.content = re.sub(file_tag, replace_method, content)
-
-        # Awaiting Django 1.8. I can just use Post.get_field('slug').max_length
-        slug_max_length = Post._meta.get_field_by_name('slug')[0].max_length
-        slug = self.slug
-        if not self.slug:
-            slug = slugify(self.title)[:slug_max_length]
-        if Post.objects.filter(slug=slug).exclude(pk=self.pk).exists():
-            return
-
-        return super().save()
 
     def __str__(self):
         if self.subtitle:

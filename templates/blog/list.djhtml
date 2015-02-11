@@ -1,4 +1,4 @@
-{% extends "blog/index.djhtml" %}
+{% extends "blog/base.djhtml" %}
 {% load captureas %}
 {% load django_markdown %}
 {% load staticfiles %}
@@ -18,13 +18,11 @@
             <div class="posts">
                 {% for post in object_list %}
                     <h2>
-                        <a href="{% url "blog:detail" pk=post.pk %}">{{ post.title }}{% if post.subtitle %} -- {{ post.subtitle }}{% endif %}</a>
+                        <a href="{% url "blog:detail" slug=post.slug %}">{{ post.title }}{% if post.subtitle %} -- {{ post.subtitle }}{% endif %}</a>
                     </h2>
-                    {% comment %}
                     <div class="post-excerpt">
                     {{ post.excerpt | markdown }}
                     </div>
-                    {% endcomment %}
                 {% endfor %}
             </div>
             <div class="text-right">

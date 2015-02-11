@@ -25,7 +25,7 @@ class IndexView(ListView):
     model = Post
 
     def get_queryset(self):
-        post_list = Post.objects.order_by('-date').all()
+        post_list = Post.objects.order_by('-created').all()
         page = self.request.GET.get('page')
         posts = make_page(post_list, per_page=5, current_page=page)
 

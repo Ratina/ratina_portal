@@ -1,0 +1,12 @@
+.blog-content img {
+    max-width: 100%;
+}
+
+/* codehilite */
+.codehilitetable {
+    
+}
+
+.codehilitetable .linenodiv pre {
+    word-break: normal;
+}

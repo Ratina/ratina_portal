@@ -1,4 +1,4 @@
-{% extends "blog/index.djhtml" %}
+{% extends "blog/base.djhtml" %}
 {% load staticfiles %}
 {% load django_markdown %}
 {% load ratina %}
@@ -8,15 +8,16 @@
     {% if object.subtitle %}<p class="lead">{{ object.subtitle }}</p>{% endif %}
 <div class="pull-left">
     <div class="subline">
-        <img style="width: 2.0em; vertical-align: middle;" src="{{ MEDIA_URL }}{{ object.author.avatar }}" alt="{{ author.display_name }}"> {{ object.date | rt_date_cn }}
+        {% if object.author.avatar %}<img style="width: 2.0em; vertical-align: middle;" src="{{ object.author.avatar.url }}" alt="{{ author.display_name }}"> {% endif %}{{ object.created | rt_date_cn }}
     </div>
 </div>
 </div>
 <div class="content">
-    {{ object.content | markdown }}
+    {{ object.content_ext | markdown }}
 </div>
 {% endblock %}
 
-{% block script %}
+{% block headerscript %}
+    <link href="{% static "css/post.css" %}" rel="stylesheet">
     <link href="{% static "css/code.css" %}" rel="stylesheet">
 {% endblock %}
