@@ -32,8 +32,8 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <ul class="blog_category">
-                                    {% for tag, count in tags %}
-                                    <li><a href="{% url "blog:tag" tag=tag %}">{{ tag }}<span class="badge">{{ count }}</span></a></li>
+                                    {% for tag, slug, count in tags %}
+                                    <li><a href="{% url "blog:tag" slug=slug %}">{{ tag }}<span class="badge">{{ count }}</span></a></li>
                                     {% endfor %}
                                 </ul>
                             </div>

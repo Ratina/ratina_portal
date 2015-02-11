@@ -18,6 +18,6 @@ urlpatterns = patterns(
     '',
 #    url('^(p(?P<page>))?$', IndexView.as_view(), name='index')
     url('^$', IndexView.as_view(), name='index'),
-    url('^tag/(?P<tag>.+)/$', TagView.as_view(), name='tag'),
+    url('^tag/(?P<slug>.+)/$', TagView.as_view(), name='tag'),
     url('^(?P<slug>.+)/$', PostView.as_view(), name='detail'),
 )

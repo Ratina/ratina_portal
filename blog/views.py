@@ -42,8 +42,8 @@ class TagView(ListView):
     model = Post
 
     def get_queryset(self):
-        tag = self.kwargs.get('tag')
-        post_list = Post.objects.filter(tags__name=tag)
+        slug = self.kwargs.get('slug')
+        post_list = Post.objects.filter(tags__slug=slug)
         page = self.request.GET.get('page')
         posts = make_page(post_list, per_page=5, current_page=page)
 

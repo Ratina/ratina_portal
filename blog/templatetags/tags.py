@@ -21,6 +21,6 @@ register = template.Library()
 @register.assignment_tag
 def get_tags():
     return [
-        (t.name, Post.objects.filter(tags__name=t).count())
+        (t.name, t.slug, Post.objects.filter(tags__name=t).count())
         for t in Tag.objects.order_by('name')
     ]
