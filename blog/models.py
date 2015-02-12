@@ -39,7 +39,7 @@ class Post(models.Model):
 
     @property
     def excerpt(self):
-        r = re.compile(r'(?P<excerpt>(.|\n){200}.*?)\r*\n', re.U | re.MULTILINE)
+        r = re.compile(r'(?P<excerpt>(.|\r?\n){200}(.|\r?\n)*?)(\r?\n){2}', re.U)
         content = ext_markdown(self, self.content)
 
         m = re.match(r, content)
