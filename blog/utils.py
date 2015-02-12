@@ -64,8 +64,10 @@ def _replace_image(postobj, content):
                     otherstyles[k] = v
                 else:
                     otherattrs[k] = v
+
+            file = _convert_file_to_url(postobj, file[1:]) if file.startswith('!') else file
             return tmpl.format(
-                file=_convert_file_to_url(postobj, file),
+                file=file,
                 otherstyles=";".join(
                     "{}:{}".format(k, v) for k, v in otherstyles
                 ) + (";" if otherstyles else ""),
@@ -95,8 +97,9 @@ def _replace_audio(postobj, content):
             otherattrs = {}
             for k,v in args:
                 otherattrs[k] = v
+            file = _convert_file_to_url(postobj, file[1:]) if file.startswith('!') else file
             return tmpl.format(
-                file=_convert_file_to_url(postobj, file),
+                file=file,
                 otherattrs = (" " if otherattrs else "") + " ".join(
                     '{}="{}"'.format(k, v) for k, v in otherattrs
                 )
