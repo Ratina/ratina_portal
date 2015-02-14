@@ -20,6 +20,7 @@ urlpatterns = patterns(
     url('^$', PostListView.as_view(), name='index'),
     url('^fictional-world/$', PostListView.as_view(), name='fw'),
     url('^conlang/$', PostListView.as_view(), name='cl'),
+    url('^os/$', PostListView.as_view(), name='os'),
     url('^programming/$', PostListView.as_view(), name='programming'),
     url('^tag/(?P<slug>.+)/$', TagView.as_view(), name='tag'),
     url('^p/(?P<slug>.+)/$', PostView.as_view(), name='detail'),
