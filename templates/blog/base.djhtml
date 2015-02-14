@@ -2,6 +2,10 @@
 {% load staticfiles %}
 {% load tags %}
 
+{% block headerscript %}
+    <link href="{% static "css/blog.css" %}" rel="stylesheet">
+{% endblock %}
+
 {% block title %}博文{% endblock %}
 
 {% block content %}

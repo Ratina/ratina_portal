@@ -1,0 +1,41 @@
+.blog-category-jumbo {
+    position: relative;
+}
+
+.blog-category-jumbo .dummy {
+    margin-top: 75%;
+}
+
+.blog-category-jumbo .real {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.blog-category-jumbo h1 {
+    line-height: 100%;
+    text-align: center;
+    font-size: 50px;
+}
+.blog-category-jumbo.j1 {
+    background-color: #9c9;
+}
+
+.blog-category-jumbo.j2 {
+    background-color: #c99;
+}
+
+.blog-content img {
+    max-width: 100%;
+}
+
+/* codehilite */
+.codehilitetable {
+    
+}
+
+.codehilitetable .linenodiv pre {
+    word-break: normal;
+}

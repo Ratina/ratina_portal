@@ -1,0 +1,28 @@
+{% extends "blog/base.djhtml" %}
+{% load staticfiles %}
+
+{% block title %}博客{% endblock %}
+
+{% block blog_content %}
+    <div class="content">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                <div class="jumbotron blog-category-jumbo j1">
+                    <div class="dummy"></div>
+                    <div class="real">
+                        <h1>架空世界</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                <div class="jumbotron blog-category-jumbo j2">
+                    <div class="dummy"></div>
+                    <div class="real">
+                        <h1>人造语言</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
