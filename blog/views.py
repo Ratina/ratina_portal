@@ -12,7 +12,8 @@ Blog views.
 __author__ = "Savor d'Isavano"
 
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, DetailView
+from django.core.urlresolvers import reverse_lazy
+from django.views.generic import TemplateView, ListView, DetailView, RedirectView
 from django.core.paginator import (
     Paginator, EmptyPage, PageNotAnInteger
 )
@@ -23,6 +24,24 @@ from .models import Post
 
 class IndexView(TemplateView):
     template_name = 'blog/index.djhtml'
+
+
+class FictionalWorldView(RedirectView):
+    url = reverse_lazy('blog:tag', kwargs={'slug': 'commonde'})
+    permanent = False
+
+
+class ConlangView(RedirectView):
+    url = reverse_lazy('blog:tag', kwargs={'slug': 'conlang'})
+    permanent = False
+
+
+class OSView(RedirectView):
+    url = reverse_lazy('blog:tag', kwargs={'slug': 'os'})
+
+
+class ProgrammingView(RedirectView):
+    url = reverse_lazy('blog:tag', kwargs={'slug': 'programming'})
 
 
 class PostListView(ListView):
