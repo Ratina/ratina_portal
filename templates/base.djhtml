@@ -129,7 +129,7 @@
                             </ul>
                         </li>
 
-                        <li id="about"{% if appname == "about" %} class="active"{% endif %}><a href="/about">关于我们</a></li>
+                        <li id="about"{% if app_name == "about" %} class="active"{% endif %}><a href="/about">关于我们</a></li>
                     </ul>
                 </div>
             </div><!--/.container-->
