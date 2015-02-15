@@ -348,7 +348,9 @@ input.search-form:hover {
 }
 
 .navbar-inverse .navbar-nav .dropdown-menu > li.divider {
-  background-color: transparent;
+    /* background-color: transparent; */
+    background-color: #ccc;
+    /* margin: 3px; */
 }
 
 .navbar-inverse .navbar-collapse,
@@ -2597,3 +2599,15 @@ shortcodes page css
 .post-excerpt {
     margin-bottom: 50px;
 }
+
+/* CSS3 animations */
+
+.rotate-forever {
+    -webkit-animation:spin 0.5s linear infinite;
+    -moz-animation:spin 0.5s linear infinite;
+    animation:spin 0.5s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

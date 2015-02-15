@@ -109,7 +109,8 @@
                     <ul class="nav navbar-nav">
                         <li id="index"{% if app_name == 'home' %} class="active"{% endif %}><a href="/#">首页</a></li>
                         <li class="dropdown{% if app_name == 'blog' %} active{% endif %}">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">博文 <i class="fa fa-angle-down"></i></a>
+                            {% comment %}Not using `data-toggle="dropdown"` on <a></a> because I want it to be a normal link.{% endcomment %}
+                            <a href="{% url "blog:index" %}">博文 <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{% url "blog:fw" %}">架空世界</a></li>
                                 <li><a href="{% url "blog:cl" %}">人造语言</a></li>
@@ -120,7 +121,8 @@
                         </li>
                         <li id="lang"{% if app_name == "lang" %} class="active"{% endif %}><a href="/lang">语言</a></li>
                         <li class="dropdown{% if app_name == 'others' %} active{% endif %}">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">其他 <i class="fa fa-angle-down"></i></a>
+                            {% comment %}Not using `data-toggle="dropdown"` on <a></a> because it should only trigger on hover{% endcomment %}
+                            <a href="#" class="dropdown-toggle">其他 <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">正義の目</a></li>
                                 <li><a href="#">生命と意識の冗談</a></li>

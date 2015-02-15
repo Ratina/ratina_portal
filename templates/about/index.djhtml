@@ -11,7 +11,7 @@
 			    <p class="lead">Ratina is founded by Savor d'Isavano and many fictional people, notably Kenet Jervet and Gaya d'Isavano. We aim at unidirectionally brings fictional goodies to the real world.</p>
 		    </div>
             <div class="center wow fadeInDown">
-                <img src="{% static "images/ratina_people/me.gif" %}" alt="many me">
+                <img class="rotate-forever" src="{% static "images/ratina_people/me.png" %}" alt="many me">
             </div>
 		    
 		    <!-- about us slider -->
