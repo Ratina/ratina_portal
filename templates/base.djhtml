@@ -124,8 +124,8 @@
                             {% comment %}Not using `data-toggle="dropdown"` on <a></a> because it should only trigger on hover{% endcomment %}
                             <a href="#" class="dropdown-toggle">其他 <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">正義の目</a></li>
-                                <li><a href="#">生命と意識の冗談</a></li>
+                                <li><a href="{% url "others:seiginome" %}">正義の目</a></li>
+                                <li><a href="{% url "others:seimeitoishikinojyoudan" %}">生命と意識の冗談</a></li>
                             </ul>
                         </li>
 
@@ -138,6 +138,7 @@
     </header><!--/header-->
 
     {% block content %}{% endblock %}
+    {% block bottom %}{% endblock %}
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
@@ -157,7 +158,6 @@
             </div>
         </div>
     </footer><!--/#footer-->
-
     <script src="{% static "js/jquery.js" %}"></script>
     <script src="{% static "js/bootstrap.min.js" %}"></script>
     <script src="{% static "js/jquery.prettyPhoto.js" %}"></script>

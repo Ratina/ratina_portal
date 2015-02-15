@@ -1,0 +1,28 @@
+{% extends 'base.djhtml' %}
+{% load staticfiles %}
+
+{% block title %}正義の目{% endblock %}
+
+{% block content %}
+    <section class="container wow fadeInDown" style="min-height: 500px;">
+        <div class="center">
+        <h2>正義の目</h2>
+        <h3>特立此条目揭露国内软件行业的种种下贱行为，包括但不限于专利侵权、许可证侵犯、利益驱动的抄袭。</h3>
+        </div>
+        <div class="blog-content">
+            <h2>No.1 盗版微软产品 <img src="{% static "images/seigi_no_me/windows_logo.jpg" %}" style="width:36px;" alt="windows_logo"></h2>
+            <p>单拿Windows来说，截至2015年1月，微软在全球桌面操作系统市场份额超过90%（参见<a href="http://www.netmarketshare.com">NetMarketShare</a>）：</p>
+            <iframe width="600" height="570" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="" id="na635595897317940000"></iframe><script type="text/javascript">document.getElementById("na635595897317940000").src="http://www.netmarketshare.com/report.aspx?qprid=10"+String.fromCharCode(38)+"qpcustomd=0"+String.fromCharCode(38)+"qpf=16"+String.fromCharCode(38)+"qpwidth=600"+String.fromCharCode(38)+"qpdisplay=1111"+String.fromCharCode(38)+"qpmr=10"+String.fromCharCode(38)+"site="+window.location.hostname</script>
+            <p>而在国内市场份额则超过95%（参见百度统计流量研究院数据）：</p>
+            <p>
+                <a class="preview" href="{% static "images/seigi_no_me/baidu_os_tongji.jpg" %}" rel="prettyPhoto">
+                    <img src="{% static "images/seigi_no_me/baidu_os_tongji.jpg" %}" style="max-width: 100%;">
+                </a>
+            </p>
+            <p>两项数据都超过了90%。由于中国是盗版的重灾区，我们可以推测，如果国内盗版杜绝，相比转而使用其他操作系统的用户，最终会购买正版Windows副本的用户仍然占绝大多数。因此，微软绝非有意放纵盗版肆虐借以扩大市场，这完全是在中国政府庇佑下的无力反抗。（《计算机软件保护条例》第十七条：为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬。）</p>
+            <p>Steve Ballmer曾说（2011年）：“在中国10份Windows复本中有9份是盗版。”全球范围内盗版的数量我无法获悉，目测不会超过50%。也就是说，在这9份盗版中也就有至少4份完完全全是微软的损失。我曾经根据Windows XP的销售额估算过微软的损失，不过记不清了，连数量级都忘了，不过可以肯定的是，绝比是一个天文数字。</p>
+            <p>Windows真的贵到普通民众消费不起吗？宁可花几千块买一个名牌包包，也不舍得花99块钱买一个Windows 8。不是中国人穷，是中国人贪小便宜惯了，没有责任感。只要有那么几拨人冲在破解战役的最前线，13亿人总是可以吃到免费午餐，一边吃还一边说：他们都可以吃，为什么我不能吃？</p>
+            <p>说实话，我曾经也用过盗版，但当我工作了以后，我突然意识到自己花得起这笔钱。所以尽管我今天用着Linux操作系统，省下了这笔开销，我偶尔也会在Steam上买上几款正版游戏。当然了，最终的决定权仍然在用户手里，也许你一辈子也不会为此付出代价，正如你一辈子在大街上随地吐痰而不会遭到罚款一样。</p>
+        </div>
+    </section>
+{% endblock %}

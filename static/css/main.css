@@ -2470,7 +2470,7 @@ shortcodes page css
 ************************/
 #bottom {
   background: #f5f5f5;
-  border-bottom: 5px solid #c52d2f;
+  /* border-bottom: 5px solid #c52d2f; */
   font-size: 14px;
 }
 
@@ -2506,6 +2506,7 @@ shortcodes page css
 }
 
 #footer {
+  border-top: 5px solid #c52d2f;
   padding-top: 30px;
   padding-bottom: 30px;
   color: #fff;
