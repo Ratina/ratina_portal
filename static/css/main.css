@@ -2008,7 +2008,11 @@ textarea#message{
   color: #fff;
 }
 
- .badge:before {
+.badge.circle {
+    background-color: #c52d2f;
+    margin-left: 10px;
+}
+ .badge.baloon:before {
   border-color: transparent transparent transparent #c52d2f;
   border-style: solid;
   border-width: 10px;
@@ -2020,7 +2024,7 @@ textarea#message{
   z-index: -99999;
 }
 
-.badge {
+.badge.baloon {
   background-color: #c52d2f;
   border-radius: 5px;
   color: #fff;
@@ -2599,6 +2603,11 @@ shortcodes page css
 
 .post-excerpt {
     margin-bottom: 50px;
+}
+
+ul.loose li {
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 /* CSS3 animations */

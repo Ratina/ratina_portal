@@ -15,6 +15,7 @@ from django.conf.urls import patterns, include, url
 from .views import (
     PostListView,
     PostView,
+    TagListView,
     TagView,
     FictionalWorldView,
     ConlangView,
@@ -30,6 +31,7 @@ urlpatterns = patterns(
     url('^conlang/$', ConlangView.as_view(), name='cl'),
     url('^os/$', OSView.as_view(), name='os'),
     url('^programming/$', ProgrammingView.as_view(), name='programming'),
+    url('^tag/$', TagListView.as_view(), name='taglist'),
     url('^tag/(?P<slug>.+)/$', TagView.as_view(), name='tag'),
     url('^p/(?P<slug>.+)/$', PostView.as_view(), name='detail'),
 )

@@ -9,7 +9,7 @@
 {% block title %}博文{% endblock %}
 
 {% block content %}
-    {% get_tags as tags %}
+    {% get_tags 5 as tags %}
     <section id="blog" class="container">
         <div class="blog">
             <div class="row">
@@ -32,19 +32,22 @@
                     </div><!--/.search-->
     			    
                     <div class="widget categories">
-                        <h3>Tags</h3>
+                        <div class="row">
+                            <div class="col-sm-6"><h3>标签</h3></div>
+                            <div class="col-sm-6 text-right"><h3><a href="{% url "blog:taglist" %}">所有标签...</a></h3></div>
+                        </div>
                         <div class="row">
                             <div class="col-sm-12">
                                 <ul class="blog_category">
                                     {% for tag, slug, count in tags %}
-                                    <li><a href="{% url "blog:tag" slug=slug %}">{{ tag }}<span class="badge">{{ count }}</span></a></li>
+                                    <li><a href="{% url "blog:tag" slug=slug %}">{{ tag }} <span class="badge circle">{{ count }}</span></a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
-                        </div>                     
+                        </div>
                     </div><!--/.categories-->
     			    <div class="widget categories">
-                        <h3>Comments</h3>
+                        <h3>评论</h3>
                         <div class="row">
                             {% include "disqus.html" %}
                         </div>                
@@ -63,21 +66,21 @@
                      </div>                     
                      </div> --><!--/.archieve-->
     			    
-                     <!-- <div class="widget tags">
-                     <h3>Tag Cloud</h3>
-                     <ul class="tag-cloud">
-                     <li><a class="btn btn-xs btn-primary" href="#">Apple</a></li>
-                     <li><a class="btn btn-xs btn-primary" href="#">Barcelona</a></li>
-                     <li><a class="btn btn-xs btn-primary" href="#">Office</a></li>
-                     <li><a class="btn btn-xs btn-primary" href="#">Ipod</a></li>
-                     <li><a class="btn btn-xs btn-primary" href="#">Stock</a></li>
-                     <li><a class="btn btn-xs btn-primary" href="#">Race</a></li>
-                     <li><a class="btn btn-xs btn-primary" href="#">London</a></li>
-                     <li><a class="btn btn-xs btn-primary" href="#">Football</a></li>
-                     <li><a class="btn btn-xs btn-primary" href="#">Porche</a></li>
-                     <li><a class="btn btn-xs btn-primary" href="#">Gadgets</a></li>
-                     </ul>
-                     </div> --><!--/.tags-->
+                    <div class="widget tags">
+                        <h3>Tag Cloud</h3>
+                        <ul class="tag-cloud">
+                            <li><a class="btn btn-xs btn-primary" href="#">Apple</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Barcelona</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Office</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Ipod</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Stock</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Race</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">London</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Football</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Porche</a></li>
+                            <li><a class="btn btn-xs btn-primary" href="#">Gadgets</a></li>
+                        </ul>
+                    </div><!--/.tags -->
     			    
     			    <div class="widget blog_gallery">
                         <h3>Our Gallery</h3>

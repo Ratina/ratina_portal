@@ -71,6 +71,10 @@ class PostView(DetailView):
     model = Post
 
 
+class TagListView(TemplateView):
+    template_name = 'blog/taglist.djhtml'
+
+
 class TagView(ListView):
     template_name = 'blog/list.djhtml'
     model = Post

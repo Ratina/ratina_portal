@@ -1,0 +1,28 @@
+{% extends "blog/base.djhtml" %}
+{% load staticfiles %}
+{% load tags %}
+
+{% block title %}标签列表{% endblock %}
+
+{% block blog_content %}
+    <div class="center">
+        <h2>标签列表</h2>
+        <p class="lead"></p>
+    </div>
+    <div class="home">
+        {% get_tags as all_tags %}
+        {% if all_tags %}
+            <div class="blog_category">
+                <ul class="tag-cloud loose">
+                    {% for tag, slug, count in all_tags %}
+                        <li><a href="{% url "blog:tag" slug=slug %}">{{ tag }} <span class="badge circle">{{ count }}</span></a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <div class="center" style="position:relative; height: 400px;">
+                <h2>_(:з」∠)_</h2>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

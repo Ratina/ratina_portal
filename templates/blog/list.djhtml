@@ -29,7 +29,9 @@
                 {% include "include/paginator.djhtml" with page=object_list only %}
             </div>
         {% else %}
-            No posts.
+            <div class="center" style="position:relative; height: 400px;">
+                <h2>_(:з」∠)_</h2>
+            </div>
         {% endif %}
     </div>
 {% endblock %}
